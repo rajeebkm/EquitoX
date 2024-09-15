@@ -1,4 +1,4 @@
-# EquitoX
+# EquitoX - Boost your crypto earnings by lending and borrowing against your collateral
 
 ## Overview
 
