@@ -1,7 +1,7 @@
 import Image from "next/image";
 const Footer = () => {
   return (
-    <footer className="bg-[#141925] flex font-serif flex-col justify-center items-center">
+    <footer className="bg-[#faacfd] flex font-serif flex-col justify-center items-center">
       <div className="bg-footer-image w-full px-4 md:px-8 py-10 flex flex-col justify-center items-center gap-4">
         <div className="flex items-center gap-4">
           <a href="/">
@@ -21,7 +21,7 @@ const Footer = () => {
         <h2 className="text-center text-[#FF6734] text-lg md:text-3xl font-bold">
           Become a Part of the Ecosystem
         </h2>
-        <p className="text-[#BC988C] text-center text-sm-2 md:text-xl max-w-2xl">
+        <p className="text-blue-600 text-center text-sm-2 md:text-xl max-w-2xl">
           Explore our services to learn and build together! If there's a new
           feature you'd like to see, please raise an issue on our GitHub
         </p>
@@ -32,7 +32,7 @@ const Footer = () => {
         </a>
       </div>
       <div className="py-4">
-        <p className="text-center text-[#BC988C] text-sm md:text-base">
+        <p className="text-center text-blue-600 text-sm md:text-base">
           Built with ❤️ by EquitoX
         </p>
       </div>

@@ -12,7 +12,7 @@ const Lend = () => {
                 </h2>
                 <p className="text-lg font-serif opacity-75">
                 EquitoX offers a powerful lending platform that allows users to unlock the full potential of their crypto assets.
-                Whether you're looking to earn passive income by lending assets like Ethereum, USDC, USDT, or DAI, or need immediate
+                Whether you're looking to earn passive income by lending assets like Ethereum, USDC, USDT, and DAI, or need immediate
                 access to funds for trading, EquitoX ensures a seamless and secure process. Our lending platform is designed with 
                 flexibility and transparency, giving you complete control over your crypto collateral.
                 </p>
