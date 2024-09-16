@@ -22,15 +22,16 @@ const Header = () => {
         </div>
 
         <div className="flex items-center gap-4 ml-auto md:flex md:gap-8">
+        <Link href="/lending-borrowing" legacyBehavior>
+            <a className="text-gery-300 text-xl hover:underline text-blue-600">Lend & Borrow</a>
+          </Link>
           <Link href="/" legacyBehavior>
             <a className="text-gery-300 text-xl hover:underline text-blue-600">Pools</a>
           </Link>
           <Link href="/" legacyBehavior>
             <a className="text-gery-300 text-xl hover:underline text-blue-600">Swap</a>
           </Link>
-          <Link href="/" legacyBehavior>
-            <a className="text-gery-300 text-xl hover:underline text-blue-600">Lend & Borrow</a>
-          </Link>
+          
         </div>
 
         <div className="hidden md:flex gap-8">
