@@ -90,7 +90,7 @@ const YourSupply: React.FC = () => {
     return (
         <>
             <Navbar />
-            <div className="flex flex-col items-center justify-center w-full pt-5 bg-gradient-to-b from-blue-100 to-blue-300 dark:from-gray-800 dark:to-gray-900 p-6 rounded-lg shadow-lg">
+            <div className="flex flex-col items-center justify-center w-full pt-5 mb-20 bg-gradient-to-b from-blue-100 to-blue-300 dark:from-gray-800 dark:to-gray-900 p-6 rounded-lg shadow-lg">
                 <table className="min-w-full border border-gray-200 rounded-lg table-auto bg-gray-900 text-white shadow-md z-0">
                     <thead>
                         <tr>

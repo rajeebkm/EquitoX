@@ -118,19 +118,7 @@ const MarketTable = () => {
     return (
         <>
             <Navbar />
-
-            <div className="flex flex-col items-center justify-center w-full mt-12 pt-20 bg-gradient-to-b from-blue-100 to-blue-300 dark:from-gray-800 dark:to-gray-900 p-6 rounded-lg shadow-lg">
-                <div className="w-full mb-6 flex font-sans flex-col sm:flex-row justify-between items-center z-0">
-                    <h1 className="text-4xl font-bold text-gray-200 dark:text-gray-200 mb-2 sm:mb-0">
-                        Markets
-                    </h1>
-                    <div className="text-lg flex flex-col sm:flex-row mb-2 sm:mb-0">
-                        <p className="mb-2 sm:mr-6 text-gray-400">Your Net Worth: <span className="font-semibold text-gray-200">$123,456</span></p>
-                        <p className="mb-2 sm:mr-6 text-gray-400">Net APR: <span className="font-semibold text-gray-200">7.890%</span></p>
-                    </div>
-                </div>
-
-
+            <div className="flex flex-col items-center justify-center w-full pt-5 mb-20 pb-10 bg-gradient-to-b from-blue-100 to-blue-300 dark:from-gray-800 dark:to-gray-900 p-6 rounded-lg shadow-lg">
                 <table className="min-w-full border border-gray-200 rounded-lg table-auto bg-gray-900 text-white shadow-md z-0">
                     <thead>
                         <tr>
