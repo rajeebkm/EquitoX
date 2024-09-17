@@ -82,7 +82,7 @@ const BorrowModal: React.FC<BorrowModalProps> = ({ isOpen, onClose, availableTok
     if (!isOpen || !selectedCollateralToken || !selectedBorrowToken) return null;
 
     const handleMaxCollateralClick = () => setCollateralAmount(selectedCollateralToken.walletBalance);
-    const handleMaxBorrowClick = () => setBorrowAmount('MAX_BORROW'); 
+    const handleMaxBorrowClick = () => setBorrowAmount('MAX_BORROW');
 
     const handleTokenChange = (token: Token, type: 'collateral' | 'borrow') => {
         if (type === 'collateral') {
