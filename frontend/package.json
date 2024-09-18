@@ -17,7 +17,20 @@
     "react": "^18",
     "react-dom": "^18",
     "viem": "^2.19.4",
-    "wagmi": "^2.12.5"
+    "wagmi": "^2.12.5",
+    "@equito-sdk/client": "^0.1.5",
+   "@equito-sdk/core": "^0.1.5",
+   "@equito-sdk/evm": "^0.1.5",
+   "@equito-sdk/viem": "^0.1.5",
+   "@radix-ui/react-dialog": "^1.1.1",
+   "@radix-ui/react-label": "^2.1.0",
+   "@radix-ui/react-popover": "^1.1.1",
+   "@radix-ui/react-slot": "^1.1.0",
+   "class-variance-authority": "^0.7.0",
+   "clsx": "^2.1.1",
+   "cmdk": "^1.0.0",
+   "lucide-react": "^0.414.0",
+   "next-themes": "^0.3.0"
   },
   "devDependencies": {
     "@types/node": "^20",
