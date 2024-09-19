@@ -10,24 +10,17 @@ import {
 } from "react";
 import { useRouter } from "./UseRouter";
 
-
 export type EquitoState = {
     chain?: Chain;
     router: ReturnType<typeof useRouter>;
 };
 
-
 export type EquitoActions = {
     setChain: Dispatch<SetStateAction<Chain | undefined>>;
 };
 
-
 type Equito = EquitoState & EquitoActions;
-
-
 export type ChainDirection = "from" | "to";
-
-
 type EquitoContext =
     | {
         from: Equito;
@@ -38,21 +31,15 @@ type EquitoContext =
 
 
 const equitoContext = createContext<EquitoContext>(undefined);
-
-
 export const EquitoProvider = ({ children }: PropsWithChildren<object>) => {
     const [fromChain, setFromChain] = useState<Equito["chain"]>();
     const [toChain, setToChain] = useState<Equito["chain"]>();
-
-
     const fromRouter = useRouter({
         chainSelector: fromChain?.chainSelector,
     });
     const toRouter = useRouter({
         chainSelector: toChain?.chainSelector,
     });
-
-
     const value = useMemo(
         () => ({
             from: {
@@ -72,8 +59,6 @@ export const EquitoProvider = ({ children }: PropsWithChildren<object>) => {
         }),
         [fromChain, fromRouter, toChain, toRouter]
     );
-
-
     return (
         <equitoContext.Provider value={value}>{children}</equitoContext.Provider>
     );
@@ -84,6 +69,5 @@ export const useEquito = () => {
     if (!context) {
         throw new Error("useEquito must be used within a EquitoProvider");
     }
-
     return context;
 };

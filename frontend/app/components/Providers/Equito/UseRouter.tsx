@@ -1,11 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
 import { getEquitoClient } from "../../../lib/equito-client";
 
-
 type UseRouterArgs = {
  chainSelector?: number;
 };
-
 
 export const useRouter = ({ chainSelector }: UseRouterArgs) =>
  useQuery({

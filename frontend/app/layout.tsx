@@ -12,7 +12,7 @@ import Web3ModalProvider from "@/context";
 
 export const metadata: Metadata = {
   title: "EquitoX",
-  description: "Built with ❤️ by EquitoX",
+  description: "Built with ❤️ by EquitoX Team",
 };
 
 export default function RootLayout({
