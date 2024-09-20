@@ -11,9 +11,7 @@ type ChainCardProps = {
   mode: ChainDirection;
 };
 
-
 export const ChainCard = ({ mode }: ChainCardProps) => {
-
   const { address } = useAccount();
   const { chain } = useEquito()[mode];
   const pingMessage: any = "hello"
@@ -23,23 +21,10 @@ export const ChainCard = ({ mode }: ChainCardProps) => {
   const pingFee: any = 9
   const pongFee: any = 90
 
-  const onInput = mode === "from" ? setPingMessage : undefined;
-  const cardTitle = `${mode === "from" ? "Source" : "Destination"} Chain`;
-  const value =
-    mode === "from"
-      ? pingMessage
-      : pongMessage
-        ? pongMessage
-        : "Waiting for ping...";
-  const label = `${mode === "from" ? "Ping" : "Pong"} Message`;
-
   const nativeCurrency = chain?.definition.nativeCurrency.symbol;
   const transactionFee = (mode === "from" ? pingFee : pongFee).fee;
   const isTransactionFeeLoading = (mode === "from" ? pingFee : pongFee)
     .isLoading;
-
-  const isProcessing =
-    status !== "isIdle" && status !== "isError" && status !== "isSuccess";
 
   return (
     <div className="flex gap-1">
