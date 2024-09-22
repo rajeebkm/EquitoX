@@ -14,6 +14,7 @@ const main = async () => {
   const owner = accounts[0].address;
   const deployer = networkConfig[networkName].deployer;
   const usdcAdmin = networkConfig[networkName].usdcAdmin;
+  console.log(owner, deployer)
 
   if (deployer?.toLowerCase() !== owner.toLowerCase()) {
     throw Error("Deployer must be the Owner");

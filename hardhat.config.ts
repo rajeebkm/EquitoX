@@ -24,6 +24,7 @@ const SCROLL_SEPOLIA_RPC = process.env.SCROLL_SEPOLIA_RPC || "";
 const AVALANCHE_FUJI_RPC = process.env.AVALANCHE_FUJI_RPC || "";
 const CELO_ALFAJORES_RPC = process.env.CELO_ALFAJORES_RPC || "";
 const OP_BNB_RPC = process.env.OP_BNB_RPC || "";
+const SEI_TESTNET_RPC = process.env.SEI_TESTNET_RPC || "";
 
 const config: HardhatUserConfig = {
   paths: {
@@ -109,6 +110,11 @@ const config: HardhatUserConfig = {
     opBNBTestnet: {
       url: OP_BNB_RPC,
       chainId: 5611,
+      accounts: [PRIVATE_KEY_ADMIN],
+    },
+    seiTestnet: {
+      url: SEI_TESTNET_RPC,
+      chainId: 1328,
       accounts: [PRIVATE_KEY_ADMIN],
     },
   },
