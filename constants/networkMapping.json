@@ -1,6 +1,51 @@
 {
-    "testnet": {},
-    "localhost": {},
-    "mainnet": {},
-    "hardhat": {}
+    "ethSepolia": {
+        "USDC": "0x743a979fA7D5E100B37C0b464754Ff8391608286",
+        "EquitoXCore": "0x8e156eC4e2194526ee9E752170D1dF25C81965B1",
+        "Router": "0x35D899517F07b1026e36F6418c53BC1305dCA5a5",
+        "StartBlock": 6738249,
+        "ChainID": 11155111
+    },
+    "arbSepolia": {
+        "USDC": "0x1cF951d54fe81482923B7Db6D8589ab7F1bbe102",
+        "EquitoXCore": "0xCAb17c6719cb93fb1dFe3a0AB1E01Fee5d56303B",
+        "Router": "0x35D899517F07b1026e36F6418c53BC1305dCA5a5",
+        "StartBlock": 83035254,
+        "ChainID": 421614
+    },
+    "opSepolia": {
+        "USDC": "0xf0F2A003C3562624e762c79006E87d64e61DE81B",
+        "EquitoXCore": "0xafDe724749638cB00DB0c17D149e9bC75f88Cd0b",
+        "Router": "0x35D899517F07b1026e36F6418c53BC1305dCA5a5",
+        "StartBlock": 17596934,
+        "ChainID": 11155420
+    },
+    "polygonAmoy": {
+        "USDC": "0xafDe724749638cB00DB0c17D149e9bC75f88Cd0b",
+        "EquitoXCore": "0xc0DB994b5b407Bd9663735b3487b113c4081234A",
+        "Router": "0x35D899517F07b1026e36F6418c53BC1305dCA5a5",
+        "StartBlock": 12276570,
+        "ChainID": 80002
+    },
+    "baseSepolia": {
+        "USDC": "0xf0F2A003C3562624e762c79006E87d64e61DE81B",
+        "EquitoXCore": "0xafDe724749638cB00DB0c17D149e9bC75f88Cd0b",
+        "Router": "0x35D899517F07b1026e36F6418c53BC1305dCA5a5",
+        "StartBlock": 15614169,
+        "ChainID": 84532
+    },
+    "scrollSepolia": {
+        "USDC": "0xf0F2A003C3562624e762c79006E87d64e61DE81B",
+        "EquitoXCore": "0xafDe724749638cB00DB0c17D149e9bC75f88Cd0b",
+        "Router": "0x35D899517F07b1026e36F6418c53BC1305dCA5a5",
+        "StartBlock": 6701854,
+        "ChainID": 534351
+    },
+    "hardhat": {
+        "USDC": "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
+        "EquitoXCore": "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0",
+        "Router": "0x35D899517F07b1026e36F6418c53BC1305dCA5a5",
+        "StartBlock": 0
+    },
+    "localhost": {}
 }

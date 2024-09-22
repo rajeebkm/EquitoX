@@ -6,18 +6,21 @@
 
 ## Features
 
-1. **Lending & Borrowing**: 
+1. **Lending & Borrowing**:
+
    - Lend your assets and earn interest.
    - Borrow assets by providing collateral.
    - Algorithmic interest rates based on market supply and demand.
    - Multi-collateralized asset support.
 
 2. **Swap**:
+
    - Instant token swaps with minimal fees.
    - Powered by internal liquidity pools for efficient trading.
    - Support for major token standards like ERC-20.
 
 3. **Staking**:
+
    - Stake supported tokens to earn staking rewards.
    - Lock tokens for specified durations to maximize returns.
    - Multiple staking tiers based on the lock-up period.
@@ -41,6 +44,7 @@
 ## Installation
 
 ### Prerequisites
+
 - Node.js >= v16
 - Yarn or npm
 - Hardhat or Truffle for smart contract development
@@ -49,35 +53,40 @@
 ### Setup
 
 1. Clone the repository:
-    ```bash
-    git clone https://github.com/rajeebkm/EquitoX.git
-    cd EquitoX
-    ```
+
+   ```bash
+   git clone https://github.com/rajeebkm/EquitoX.git
+   cd EquitoX
+   ```
 
 2. Install dependencies:
-    ```bash
-    yarn install
-    ```
+
+   ```bash
+   yarn install
+   ```
 
 3. Compile the smart contracts:
-    ```bash
-    npx hardhat compile
-    ```
+
+   ```bash
+   npx hardhat compile
+   ```
 
 4. Deploy to local or test network:
-    ```bash
-    npx hardhat run scripts/deploy.js --network <network_name>
-    ```
+   ```bash
+   npx hardhat run scripts/deploy.js --network <network_name>
+   ```
 
 ## Lending & Borrowing
 
 ### Lend Assets
 
 To lend an asset:
+
 1. Deposit tokens into the protocol.
 2. Receive interest-bearing tokens representing your deposit.
 
 Example:
+
 ```js
 await lendingContract.deposit(assetAddress, amount);
 ```
@@ -85,10 +94,12 @@ await lendingContract.deposit(assetAddress, amount);
 ### Borrow Assets
 
 To borrow an asset:
+
 1. Provide supported collateral.
 2. Borrow up to your collateral limit.
 
 Example:
+
 ```js
 await lendingContract.borrow(assetAddress, collateralAmount);
 ```
@@ -96,6 +107,7 @@ await lendingContract.borrow(assetAddress, collateralAmount);
 ### Repay Loans
 
 To repay your borrowed assets:
+
 ```js
 await lendingContract.repay(assetAddress, borrowAmount);
 ```
@@ -114,6 +126,7 @@ EquitoX includes a token swap feature, enabling users to exchange tokens efficie
 2. Use the `swap` function to exchange tokens.
 
 Example:
+
 ```js
 await swapContract.swap(inputTokenAddress, outputTokenAddress, amount);
 ```
@@ -128,6 +141,7 @@ Users can stake tokens in the staking pool to earn rewards.
 2. Earn staking rewards over time.
 
 Example:
+
 ```js
 await stakingContract.stake(stakingTokenAddress, amount);
 ```
@@ -145,6 +159,7 @@ Yield farming allows users to provide liquidity and earn rewards.
 3. Earn yield farming rewards over time.
 
 Example:
+
 ```js
 await farmingContract.stakeLP(lpTokenAddress, amount);
 ```
@@ -161,16 +176,19 @@ await farmingContract.stakeLP(lpTokenAddress, amount);
 We welcome community contributions to EquitoX! To get involved:
 
 1. Fork the repository and create a new branch:
+
    ```bash
    git checkout -b feature-branch
    ```
 
 2. Make your changes and commit them:
+
    ```bash
    git commit -m "Add new feature"
    ```
 
 3. Push to your branch:
+
    ```bash
    git push origin feature-branch
    ```
