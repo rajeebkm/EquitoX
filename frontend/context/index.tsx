@@ -29,14 +29,12 @@ export default function AppKitProvider({
  initialState?: State;
 }) {
  return (
-
-
-   <QueryClientProvider client={queryClient}>
-     <EquitoProvider>
-       <WagmiProvider config={config} initialState={initialState}>
+   <WagmiProvider config={config} initialState={initialState}>
+     <QueryClientProvider client={queryClient}>
+       <EquitoProvider>
          {children}
-       </WagmiProvider>
-     </EquitoProvider>
-   </QueryClientProvider>
+       </EquitoProvider>
+     </QueryClientProvider>
+   </WagmiProvider>
  );
 }
