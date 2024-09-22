@@ -77,6 +77,12 @@
    ```bash
    npx hardhat run deploy/deploy.ts --network <network_name>
    ```
+4. To Run the client:
+   ```bash
+   cd frontend
+   npm install
+   npm run dev
+   ```
 
 ## Lending & Borrowing
 
@@ -103,7 +109,7 @@ To borrow an asset:
 Example:
 
 ```js
-await equitoXCore.borrow(assetAddress, collateralAmount);
+await equitoXCore.borrow(amount, destinationChainSelector, destinationChainToken);
 ```
 
 ### Repay Loans
@@ -111,14 +117,14 @@ await equitoXCore.borrow(assetAddress, collateralAmount);
 To repay your borrowed assets:
 
 ```js
-await lendingContract.repay(assetAddress, borrowAmount);
+await equitoXCore.repay(sourceChainSelectorOfLoan, token));
 ```
 
 ### Interest Rates
 
 Interest rates are dynamic, adjusting based on the utilization of each asset in the lending pool.
 
-## Swap
+## Swap [Coming Soon]
 
 EquitoX includes a token swap feature, enabling users to exchange tokens efficiently within the protocol.
 
@@ -133,7 +139,7 @@ Example:
 await swapContract.swap(inputTokenAddress, outputTokenAddress, amount);
 ```
 
-## Staking
+## Staking [Coming Soon]
 
 Users can stake tokens in the staking pool to earn rewards.
 
@@ -150,7 +156,7 @@ await stakingContract.stake(stakingTokenAddress, amount);
 
 Rewards can be claimed or left to accumulate.
 
-## Yield Farming
+## Yield Farming [Coming Soon]
 
 Yield farming allows users to provide liquidity and earn rewards.
 
