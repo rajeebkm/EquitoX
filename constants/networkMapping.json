@@ -1,24 +1,27 @@
 {
     "ethSepolia": {
-        "USDC": "0x743a979fA7D5E100B37C0b464754Ff8391608286",
-        "EquitoXCore": "0x8e156eC4e2194526ee9E752170D1dF25C81965B1",
+        "USDC": "0xb60776655B0988e3B46ED9867cd5062aA054e70D",
+        "EquitoXCore": "0x992530cb1EC7E682bf625cF121D2f2E9ca75D4AC",
         "Router": "0x35D899517F07b1026e36F6418c53BC1305dCA5a5",
-        "StartBlock": 6738249,
-        "ChainID": 11155111
+        "StartBlock": 6739171,
+        "ChainID": 11155111,
+        "ChainSelector": 1001
     },
     "arbSepolia": {
-        "USDC": "0xEe9C8b6c48f9617911135c1c9B5a2CfcE9718f43",
-        "EquitoXCore": "0x5a274CE5e4bd6e0C0f75d4B495a1b9237CEB54bB",
+        "USDC": "0x3F0Ae095F4F8799d088bf56795A8B2F92E6bBD8A",
+        "EquitoXCore": "0x36F7B4fc0ad44D15510BDC2190E5cfAaEAE1a94D",
         "Router": "0x5C5386A7D14d9D6c24913386db74c20e36Bc436c",
-        "StartBlock": 83050456,
-        "ChainID": 421614
+        "StartBlock": 83081098,
+        "ChainID": 421614,
+        "ChainSelector": 1004
     },
     "opSepolia": {
-        "USDC": "0xe4D80ED5C8344A129535895255814e57f131c4CD",
-        "EquitoXCore": "0xac9A9B500a313f4c1B980b4492d3F436376F9776",
+        "USDC": "0x703107de305EE18340DF3a94eF245EE1d4488E1A",
+        "EquitoXCore": "0x9bAe9b1Cc2F9E1a4820D2204A899876f8F9c6A41",
         "Router": "0xa5e465Be96341b4f1233eF334A4bac2e9Fd10981",
-        "StartBlock": 17598930,
-        "ChainID": 11155420
+        "StartBlock": 17603350,
+        "ChainID": 11155420,
+        "ChainSelector": 1006
     },
     "polygonAmoy": {
         "USDC": "0xa62c1D6b9A57a487F32098cd3743AA455E728A6b",
@@ -28,18 +31,28 @@
         "ChainID": 80002
     },
     "baseSepolia": {
-        "USDC": "0xe4D80ED5C8344A129535895255814e57f131c4CD",
-        "EquitoXCore": "0xac9A9B500a313f4c1B980b4492d3F436376F9776",
+        "USDC": "0x703107de305EE18340DF3a94eF245EE1d4488E1A",
+        "EquitoXCore": "0x9bAe9b1Cc2F9E1a4820D2204A899876f8F9c6A41",
         "Router": "0x1EeF0D9b300B2Fca1BDB39481d23D16101B0E19B",
-        "StartBlock": 15616104,
-        "ChainID": 84532
+        "StartBlock": 15620790,
+        "ChainID": 84532,
+        "ChainSelector": 1007
     },
     "scrollSepolia": {
-        "USDC": "0xac9A9B500a313f4c1B980b4492d3F436376F9776",
-        "EquitoXCore": "0x4595c0Fa428e4BE211566237041D1e4FEac7fda4",
+        "USDC": "0x984DE3A95baeB9Ee9cB7047E605480e0BdDAbb7d",
+        "EquitoXCore": "0x04dC87a8913362EfaAE26378eA35E0e25Cf704fB",
         "Router": "0x4D7E6e482c77e9142bf92490772f4466e8634bC4",
-        "StartBlock": 6702095,
-        "ChainID": 534351
+        "StartBlock": 6702947,
+        "ChainID": 534351,
+        "ChainSelector": 1020
+    },
+    "seiTestnet": {
+        "USDC": "0x255Ef4B8850870d62d711523A7918e2B9e87099D",
+        "EquitoXCore": "0xB18DB8cabC97546e4eB5B26AeDB4a56231fF10CC",
+        "Router": "0x29FeBDd370c8bc815455d518AE38a79D1e200f52",
+        "StartBlock": 118999451,
+        "ChainID": 1328,
+        "ChainSelector": 1017
     },
     "hardhat": {
         "USDC": "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
@@ -47,12 +60,5 @@
         "Router": "0x35D899517F07b1026e36F6418c53BC1305dCA5a5",
         "StartBlock": 0
     },
-    "localhost": {},
-    "seiTestnet": {
-        "USDC": "0x95a7557D9EdFc28e2B8df8C94B6f2E17dff3b640",
-        "EquitoXCore": "0x697Ce475f23C39E75e674772C90E670c7a8A3155",
-        "Router": "0x29FeBDd370c8bc815455d518AE38a79D1e200f52",
-        "StartBlock": 118977424,
-        "ChainID": 1328
-    }
+    "localhost": {}
 }

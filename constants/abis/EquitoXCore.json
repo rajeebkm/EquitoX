@@ -144,91 +144,9 @@
                 "type": "address"
             }
         ],
-        "name": "borrowAmount",
+        "name": "borrow",
         "outputs": [],
         "stateMutability": "payable",
-        "type": "function"
-    },
-    {
-        "inputs": [
-            {
-                "internalType": "uint256",
-                "name": "amount",
-                "type": "uint256"
-            },
-            {
-                "internalType": "uint256",
-                "name": "destinationChainSelector",
-                "type": "uint256"
-            },
-            {
-                "internalType": "address",
-                "name": "destinationChainToken",
-                "type": "address"
-            }
-        ],
-        "name": "calculateAmountOnDestinationChain",
-        "outputs": [
-            {
-                "internalType": "uint256",
-                "name": "",
-                "type": "uint256"
-            }
-        ],
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "inputs": [
-            {
-                "internalType": "address",
-                "name": "user",
-                "type": "address"
-            },
-            {
-                "internalType": "uint256",
-                "name": "destinationChainSelector",
-                "type": "uint256"
-            },
-            {
-                "internalType": "address",
-                "name": "destinationChainToken",
-                "type": "address"
-            }
-        ],
-        "name": "calculateDestinationMaximumBorrowAmount",
-        "outputs": [
-            {
-                "internalType": "uint256",
-                "name": "",
-                "type": "uint256"
-            }
-        ],
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "inputs": [
-            {
-                "internalType": "address",
-                "name": "user",
-                "type": "address"
-            },
-            {
-                "internalType": "uint256",
-                "name": "sourceChainSelectorOfLoan",
-                "type": "uint256"
-            }
-        ],
-        "name": "calculateRepayAmount",
-        "outputs": [
-            {
-                "internalType": "uint256",
-                "name": "",
-                "type": "uint256"
-            }
-        ],
-        "stateMutability": "view",
         "type": "function"
     },
     {
@@ -260,12 +178,70 @@
     {
         "inputs": [
             {
+                "internalType": "uint256",
+                "name": "amount",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "destinationChainSelector",
+                "type": "uint256"
+            },
+            {
+                "internalType": "address",
+                "name": "destinationChainToken",
+                "type": "address"
+            }
+        ],
+        "name": "getDestinationChainAmount",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
                 "internalType": "address",
                 "name": "user",
                 "type": "address"
             }
         ],
         "name": "getHealthFactor",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "user",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "destinationChainSelector",
+                "type": "uint256"
+            },
+            {
+                "internalType": "address",
+                "name": "destinationChainToken",
+                "type": "address"
+            }
+        ],
+        "name": "getMaxBorrowAmountOnDestinationChain",
         "outputs": [
             {
                 "internalType": "uint256",
@@ -310,6 +286,30 @@
     {
         "inputs": [],
         "name": "getProtocolBalance",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "user",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "sourceChainSelectorOfLoan",
+                "type": "uint256"
+            }
+        ],
+        "name": "getRepayAmount",
         "outputs": [
             {
                 "internalType": "uint256",
@@ -477,7 +477,7 @@
                 "type": "address"
             }
         ],
-        "name": "repayBorrowedAmount",
+        "name": "repay",
         "outputs": [],
         "stateMutability": "payable",
         "type": "function"
@@ -521,7 +521,7 @@
                 "type": "address[]"
             }
         ],
-        "name": "setLendingAddress",
+        "name": "setLendBorrowAddresses",
         "outputs": [],
         "stateMutability": "nonpayable",
         "type": "function"
@@ -570,29 +570,6 @@
         "type": "function"
     },
     {
-        "inputs": [
-            {
-                "internalType": "uint256[]",
-                "name": "chainSelectors",
-                "type": "uint256[]"
-            },
-            {
-                "internalType": "address[]",
-                "name": "tokenAddress",
-                "type": "address[]"
-            },
-            {
-                "internalType": "uint256[]",
-                "name": "prices",
-                "type": "uint256[]"
-            }
-        ],
-        "name": "setTokenPrice",
-        "outputs": [],
-        "stateMutability": "nonpayable",
-        "type": "function"
-    },
-    {
         "inputs": [],
         "name": "supplyCollateral",
         "outputs": [],
@@ -632,6 +609,29 @@
             }
         ],
         "name": "transferOwnership",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256[]",
+                "name": "chainSelectors",
+                "type": "uint256[]"
+            },
+            {
+                "internalType": "address[]",
+                "name": "tokenAddress",
+                "type": "address[]"
+            },
+            {
+                "internalType": "uint256[]",
+                "name": "prices",
+                "type": "uint256[]"
+            }
+        ],
+        "name": "updateTokenPrices",
         "outputs": [],
         "stateMutability": "nonpayable",
         "type": "function"

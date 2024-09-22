@@ -94,7 +94,7 @@ contract EquitoXCore is EquitoApp {
     /// @notice Set the lending addresses on multiple chains.
     /// @param chainSelectors An array of chain selectors.
     /// @param swapAddresses An array of addresses corresponding to the chain selectors.
-    function setLendingAddress(uint256[] calldata chainSelectors, address[] calldata swapAddresses)
+    function setLendBorrowAddresses(uint256[] calldata chainSelectors, address[] calldata swapAddresses)
         external
         onlyOwner
     {
@@ -109,7 +109,7 @@ contract EquitoXCore is EquitoApp {
     /// @param chainSelectors An array of chain selectors.
     /// @param tokenAddress An array of token addresses corresponding to the chains.
     /// @param prices An array of prices for each token on the respective chains.
-    function setTokenPrice(uint256[] memory chainSelectors, address[] memory tokenAddress, uint256[] memory prices)
+    function updateTokenPrices(uint256[] memory chainSelectors, address[] memory tokenAddress, uint256[] memory prices)
         external
         onlyOwner
     {
@@ -132,12 +132,12 @@ contract EquitoXCore is EquitoApp {
     /// @param _amount The amount of source tokens.
     /// @param destinationChainSelector The identifier of the destination chain.
     /// @param destinationChainToken The address of the token on the destination chain.
-    function borrowAmount(uint256 _amount, uint256 destinationChainSelector, address destinationChainToken)
+    function borrow(uint256 _amount, uint256 destinationChainSelector, address destinationChainToken)
         public
         payable
     {
         require(
-            calculateDestinationMaximumBorrowAmount(msg.sender, destinationChainSelector, destinationChainToken)
+            getMaxBorrowAmountOnDestinationChain(msg.sender, destinationChainSelector, destinationChainToken)
                 >= _amount,
             "user cannot withdraw greater than their max borrow amount"
         );
@@ -163,7 +163,7 @@ contract EquitoXCore is EquitoApp {
     /// @notice Repay the borrowed amount on the source chain.
     /// @param sourceChainSelectorOfLoan The chain selector of the source chain where the loan was taken.
     /// @param token The token to be repaid (either native or ERC20).
-    function repayBorrowedAmount(uint256 sourceChainSelectorOfLoan, address token) public payable {
+    function repay(uint256 sourceChainSelectorOfLoan, address token) public payable {
         bytes1 operationID = 0x02;
 
         bytes memory data = abi.encode(operationID, userBorrow[sourceChainSelectorOfLoan][msg.sender]);
@@ -177,12 +177,12 @@ contract EquitoXCore is EquitoApp {
         if (token != NATIVE_TOKEN) {
             require(
                 IERC20Metadata(token).balanceOf(msg.sender)
-                    >= calculateRepayAmount(msg.sender, sourceChainSelectorOfLoan)
+                    >= getRepayAmount(msg.sender, sourceChainSelectorOfLoan)
                     && msg.value >= router.getFee(address(this))
             );
         } else {
             require(
-                msg.value >= router.getFee(address(this)) + calculateRepayAmount(msg.sender, sourceChainSelectorOfLoan)
+                msg.value >= router.getFee(address(this)) + getRepayAmount(msg.sender, sourceChainSelectorOfLoan)
             );
         }
     }
@@ -228,7 +228,7 @@ contract EquitoXCore is EquitoApp {
     /// @param user The address of the user.
     /// @param sourceChainSelectorOfLoan The chain selector of the source chain where the loan was taken.
     /// @return The amount to be repaid.
-    function calculateRepayAmount(address user, uint256 sourceChainSelectorOfLoan) public view returns (uint256) {
+    function getRepayAmount(address user, uint256 sourceChainSelectorOfLoan) public view returns (uint256) {
         Borrow memory borrow = userBorrow[sourceChainSelectorOfLoan][user];
 
         uint256 daysSinceLoan = (block.timestamp - borrow.startTime) / 86400;
@@ -253,14 +253,14 @@ contract EquitoXCore is EquitoApp {
     /// @param destinationChainSelector The identifier of the destination chain.
     /// @param destinationChainToken The token on the destination chain.
     /// @return The maximum borrow amount.
-    function calculateDestinationMaximumBorrowAmount(
+    function getMaxBorrowAmountOnDestinationChain(
         address user,
         uint256 destinationChainSelector,
         address destinationChainToken
     ) public view returns (uint256) {
         uint256 collateral = balances[user] * tokenPrice[router.chainSelector()][NATIVE_TOKEN];
 
-        return (collateral * tokenPrice[destinationChainSelector][destinationChainToken]) / collateralRatio;
+        return (collateral * collateralRatio / tokenPrice[destinationChainSelector][destinationChainToken]);
     }
 
     /// @notice Calculates the equivalent amount of a token on the destination chain.
@@ -268,7 +268,7 @@ contract EquitoXCore is EquitoApp {
     /// @param destinationChainSelector The selector/ID of the destination chain.
     /// @param destinationChainToken The token address on the destination chain.
     /// @return The calculated equivalent amount of tokens on the destination chain.
-    function calculateAmountOnDestinationChain(
+    function getDestinationChainAmount(
         uint256 amount,
         uint256 destinationChainSelector,
         address destinationChainToken

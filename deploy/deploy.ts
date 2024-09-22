@@ -117,7 +117,7 @@ const main = async () => {
 
   // Settings
   const equitoXCoreFactory: any = await EquitoXCore.attach(equitoXCore.target);
-  tx = await equitoXCoreFactory.setCollateralRatio("60");
+  tx = await equitoXCoreFactory.setCollateralRatio("2");
   const crTx = await tx.wait(1);
   if (!crTx.status) {
     throw Error(`failed to setCollateralRatio: `);
@@ -139,26 +139,26 @@ const main = async () => {
   let token0 = usdAddress.target;
   let nativeToken = "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE";
 
-  let chainSelectors = ["1", "1"];
   let tokens = [token0, nativeToken];
+  let chainSelectors = [networkConfig[networkName].chainSelector, networkConfig[networkName].chainSelector];
 
   let prices = ["1", "2500"];
-  let chainSelectorsforPeers = ["1"];
+  let chainSelectorsforPeers = [networkConfig[networkName].chainSelector];
   let peers = [equitoXCore.target];
 
-  tx = await equitoXCoreFactory.setLendingAddress(
+  tx = await equitoXCoreFactory.setLendBorrowAddresses(
     chainSelectorsforPeers,
     peers,
   );
-  const setLendingAddressTx = await tx.wait(1);
+  const setLendBorrowAddressesTx = await tx.wait(1);
 
-  if (!setLendingAddressTx.status) {
-    throw Error(`failed to setLendingAddress: `);
+  if (!setLendBorrowAddressesTx.status) {
+    throw Error(`failed to setLendBorrowAddresses: `);
   }
-  tx = await equitoXCoreFactory.setTokenPrice(chainSelectors, tokens, prices);
-  const setPriceTx = await tx.wait(1);
-  if (!setPriceTx.status) {
-    throw Error(`failed to setTokenPrice: `);
+  tx = await equitoXCoreFactory.updateTokenPrices(chainSelectors, tokens, prices);
+  const updateTokenPricesTx = await tx.wait(1);
+  if (!updateTokenPricesTx.status) {
+    throw Error(`failed to updateTokenPrices: `);
   }
 
   let contracts = [
@@ -171,7 +171,8 @@ const main = async () => {
     // { name: "DiamondInit", address: diamondInit.target },
     // { name: "Diamond", address: diamond.target },
     { name: "StartBlock", address: startBlock.number },
-    { name: "ChainID", address:   network.config.chainId},
+    { name: "ChainID", address: network.config.chainId },
+    { name: "ChainSelector", address: networkConfig[networkName].chainSelector },
   ];
 
   updateContractsJson(contracts);

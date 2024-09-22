@@ -227,7 +227,7 @@ export const chains: Chain[] = [
   //   RouterContract: "0x35D899517F07b1026e36F6418c53BC1305dCA5a5",
   // },
   {
-    chainSelector: 1023,
+    chainSelector: 1017,
     name: "Sei Testnet",
     img: 1328,
     definition: seiTestnet,
