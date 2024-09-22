@@ -23,7 +23,7 @@ const Lend = () => {
             >
                 <div className="relative col-start-1 row-start-1 w-90 rounded-[8px] shadow-lg overflow-hidden">
                     <img
-                        src="/hero.png"
+                        src="/lending.png"
                         alt="lending-image"
                         className="w-full h-full object-cover dark-img"
                     />

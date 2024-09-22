@@ -21,7 +21,7 @@ const Swap = () => {
       <div className="grid grid-cols-1 grid-rows-1 feat-img-left" aria-hidden>
         <div className="relative col-start-1 row-start-1 w-full rounded-[8px] shadow-lg overflow-hidden">
           <img
-            src="/hero.png"
+            src="/marketplace.png"
             alt="token-swap-image"
             className="w-full h-full object-cover dark-img"
           />

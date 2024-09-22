@@ -21,7 +21,7 @@ const Borrow = () => {
       <div className="grid grid-cols-1 grid-rows-1 feat-img-left" aria-hidden>
         <div className="relative col-start-1 row-start-1 w-90 rounded-[8px] shadow-lg overflow-hidden">
           <img
-            src="/hero.png"
+            src="/borrowing.png"
             alt="borrowing-image"
             className="w-full h-full object-cover dark-img"
           />
