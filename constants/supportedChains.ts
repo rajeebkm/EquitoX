@@ -20,50 +20,50 @@ import {
 } from "wagmi/chains";
 import { Address, type Chain as Definition } from "viem";
 
-const seiEvmAtlantic: Definition = {
-  id: 1328,
-  name: "Sei Atlantic",
-  nativeCurrency: {
-    decimals: 18,
-    name: "SEI",
-    symbol: "SEI",
-  },
-  rpcUrls: {
-    default: {
-      http: ["https://evm-rpc-testnet.sei-apis.com"],
-    },
-  },
-};
+// const seiEvmAtlantic: Definition = {
+//   id: 1328,
+//   name: "Sei Atlantic",
+//   nativeCurrency: {
+//     decimals: 18,
+//     name: "SEI",
+//     symbol: "SEI",
+//   },
+//   rpcUrls: {
+//     default: {
+//       http: ["https://evm-rpc-testnet.sei-apis.com"],
+//     },
+//   },
+// };
 
-const merlinTestnet: Definition = {
-  id: 686868,
-  name: "Merlin Testnet",
-  nativeCurrency: {
-    decimals: 18,
-    name: "BTC",
-    symbol: "BTC",
-  },
-  rpcUrls: {
-    default: {
-      http: ["https://testnet-rpc.merlinchain.io"],
-    },
-  },
-};
+// const merlinTestnet: Definition = {
+//   id: 686868,
+//   name: "Merlin Testnet",
+//   nativeCurrency: {
+//     decimals: 18,
+//     name: "BTC",
+//     symbol: "BTC",
+//   },
+//   rpcUrls: {
+//     default: {
+//       http: ["https://testnet-rpc.merlinchain.io"],
+//     },
+//   },
+// };
 
-const oasisEmeraldTestnet: Definition = {
-  id: 42261,
-  name: "Oasis Emerald Testnet",
-  nativeCurrency: {
-    decimals: 18,
-    name: "ROSE",
-    symbol: "ROSE",
-  },
-  rpcUrls: {
-    default: {
-      http: ["https://testnet.emerald.oasis.dev"],
-    },
-  },
-};
+// const oasisEmeraldTestnet: Definition = {
+//   id: 42261,
+//   name: "Oasis Emerald Testnet",
+//   nativeCurrency: {
+//     decimals: 18,
+//     name: "ROSE",
+//     symbol: "ROSE",
+//   },
+//   rpcUrls: {
+//     default: {
+//       http: ["https://testnet.emerald.oasis.dev"],
+//     },
+//   },
+// };
 
 export const chains: Chain[] = [
   {
