@@ -9,23 +9,22 @@ pragma solidity 0.8.26;
  * Implementation of a diamond.
  * /*****************************************************************************
  */
-import { IDiamondCut } from "../interfaces/IDiamondCut.sol";
-import { IDiamondLoupe } from "../interfaces/IDiamondLoupe.sol";
-import { IERC165 } from "../interfaces/IERC165.sol";
-import { IERC173 } from "../interfaces/IERC173.sol";
-import { LibDiamond } from "../libraries/LibDiamond.sol";
+import {IDiamondCut} from "../interfaces/IDiamondCut.sol";
+import {IDiamondLoupe} from "../interfaces/IDiamondLoupe.sol";
+import {IERC165} from "../interfaces/IERC165.sol";
+import {IERC173} from "../interfaces/IERC173.sol";
+import {LibDiamond} from "../libraries/LibDiamond.sol";
 import {Initializable} from "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
 import {PausableUpgradeable} from "@openzeppelin/contracts-upgradeable/utils/PausableUpgradeable.sol";
 import {ReentrancyGuardUpgradeable} from "@openzeppelin/contracts-upgradeable/utils/ReentrancyGuardUpgradeable.sol";
 
-import {AppStorage } from "../AppStorage.sol";
+import {AppStorage} from "../AppStorage.sol";
 
 // It is expected that this contract is customized if you want to deploy your diamond
 // with data from a deployment script. Use the init function to initialize state variables
 // of your diamond. Add parameters to the init function if you need to.
 
 contract DiamondInit is Initializable, ReentrancyGuardUpgradeable, PausableUpgradeable {
-
     AppStorage internal s;
 
     modifier onlyOwner() {
@@ -35,13 +34,7 @@ contract DiamondInit is Initializable, ReentrancyGuardUpgradeable, PausableUpgra
 
     // You can add parameters to this function in order to pass in
     // data to set your own state variables
-    function init(
-        address _usdc
-    )
-        external
-        onlyOwner
-        initializer
-    {
+    function init(address _usdc) external onlyOwner initializer {
         // adding ERC165 data
         LibDiamond.DiamondStorage storage ds = LibDiamond.diamondStorage();
         ds.supportedInterfaces[type(IERC165).interfaceId] = true;
@@ -59,24 +52,22 @@ contract DiamondInit is Initializable, ReentrancyGuardUpgradeable, PausableUpgra
         __Pausable_init();
         __ReentrancyGuard_init();
 
-  
         s.usdc = _usdc;
     }
 
-    /** 
-    * @notice Pauses the contract, preventing certain actions from being executed. // #Zokyo-58
-    * @dev Can only be called by the contract owner.
-    */
+    /**
+     * @notice Pauses the contract, preventing certain actions from being executed. // #Zokyo-58
+     * @dev Can only be called by the contract owner.
+     */
     function pause() external payable onlyOwner {
         _pause();
     }
 
     /**
-    * @notice Unpauses the contract, allowing paused actions to resume.
-    * @dev Can only be called by the contract owner.
-    */
+     * @notice Unpauses the contract, allowing paused actions to resume.
+     * @dev Can only be called by the contract owner.
+     */
     function unpause() external payable onlyOwner {
         _unpause();
     }
-
 }

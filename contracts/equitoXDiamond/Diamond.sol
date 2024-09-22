@@ -9,11 +9,10 @@ pragma solidity 0.8.26;
  * Implementation of a diamond.
  * /*****************************************************************************
  */
-import { IDiamondCut } from "./interfaces/IDiamondCut.sol";
-import { LibDiamond } from "./libraries/LibDiamond.sol";
+import {IDiamondCut} from "./interfaces/IDiamondCut.sol";
+import {LibDiamond} from "./libraries/LibDiamond.sol";
 
 contract Diamond {
-
     constructor(address _contractOwner, address _diamondCutFacet) payable {
         LibDiamond.setContractOwner(_contractOwner);
 
@@ -57,6 +56,5 @@ contract Diamond {
         }
     }
 
-    receive() external payable { }
-
+    receive() external payable {}
 }

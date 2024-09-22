@@ -7,16 +7,15 @@ pragma solidity 0.8.26;
  * /*****************************************************************************
  */
 
-import { IDiamondLoupe } from "../interfaces/IDiamondLoupe.sol";
+import {IDiamondLoupe} from "../interfaces/IDiamondLoupe.sol";
 
-import { IERC165 } from "../interfaces/IERC165.sol";
-import { LibDiamond } from "../libraries/LibDiamond.sol";
+import {IERC165} from "../interfaces/IERC165.sol";
+import {LibDiamond} from "../libraries/LibDiamond.sol";
 
 // The functions in DiamondLoupeFacet MUST be added to a diamond.
 // The EIP-2535 Diamond standard requires these functions
 
 contract DiamondLoupeFacet is IDiamondLoupe, IERC165 {
-
     // Diamond Loupe Functions
     ////////////////////////////////////////////////////////////////////
     /// These functions are expected to be called frequently by tools.
@@ -164,5 +163,4 @@ contract DiamondLoupeFacet is IDiamondLoupe, IERC165 {
         LibDiamond.DiamondStorage storage ds = LibDiamond.diamondStorage();
         return ds.supportedInterfaces[_interfaceId];
     }
-
 }

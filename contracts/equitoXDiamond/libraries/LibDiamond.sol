@@ -7,7 +7,7 @@ pragma solidity 0.8.26;
  * EIP-2535 Diamonds: https://eips.ethereum.org/EIPS/eip-2535
  * /*****************************************************************************
  */
-import { IDiamondCut } from "../interfaces/IDiamondCut.sol";
+import {IDiamondCut} from "../interfaces/IDiamondCut.sol";
 
 // Remember to add the loupe functions from DiamondLoupeFacet to the diamond.
 // The loupe functions are required by the EIP2535 Diamonds standard
@@ -15,7 +15,6 @@ import { IDiamondCut } from "../interfaces/IDiamondCut.sol";
 error InitializationFunctionReverted(address _initializationContractAddress, bytes _calldata);
 
 library LibDiamond {
-
     bytes32 constant DIAMOND_STORAGE_POSITION = keccak256("diamond.standard.diamond.storage");
 
     struct DiamondStorage {
@@ -264,5 +263,4 @@ library LibDiamond {
         }
         require(contractSize > 0, _errorMessage);
     }
-
 }
