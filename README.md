@@ -4,6 +4,8 @@
 
 **EquitoX** is a decentralized Web3 protocol for lending, borrowing, token swaps, staking, and yield farming. Built to leverage blockchain technology, EquitoX allows users to earn interest, borrow assets with collateral, swap tokens, and participate in staking and yield farming opportunities, all without intermediaries.
 
+<img width="1425" alt="equitoXBackground" src="https://github.com/user-attachments/assets/79306e32-d537-4a74-8d1b-af3ac05c77d6">
+
 ## Features
 
 1. **Lending & Borrowing**:
@@ -73,7 +75,7 @@
 
 4. Deploy to local or test network:
    ```bash
-   npx hardhat run scripts/deploy.js --network <network_name>
+   npx hardhat run deploy/deploy.ts --network <network_name>
    ```
 
 ## Lending & Borrowing
@@ -88,7 +90,7 @@ To lend an asset:
 Example:
 
 ```js
-await lendingContract.deposit(assetAddress, amount);
+await equitoXCore.supplyCollateral();
 ```
 
 ### Borrow Assets
@@ -101,7 +103,7 @@ To borrow an asset:
 Example:
 
 ```js
-await lendingContract.borrow(assetAddress, collateralAmount);
+await equitoXCore.borrow(assetAddress, collateralAmount);
 ```
 
 ### Repay Loans
