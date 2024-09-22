@@ -29,49 +29,7 @@ interface TokenData {
 const YourSupply: React.FC = () => {
     const data: TokenData[] = [
         {
-            token: "rUSDT",
-            amount: "0.0007",
-            exchangeRate: "1.015",
-            supplyAPR: "70.00%",
-            effectiveAPR: "70.00%",
-            status: {
-                staked: "9.9691",
-                locked: "0.0000",
-                unlocked: "0.0000",
-            },
-            icons: { S: true, U: true, L: true },
-            imageUrl: 'https://cryptologos.cc/logos/tether-usdt-logo.svg?v=034',
-        },
-        {
-            token: "rBTC",
-            amount: "0.0143",
-            exchangeRate: "1.005",
-            supplyAPR: "2.49%",
-            effectiveAPR: "2.49%",
-            status: {
-                staked: "9.9691",
-                locked: "0.0000",
-                unlocked: "0.0000",
-            },
-            icons: { S: true, U: true, L: true },
-            imageUrl: 'https://cryptologos.cc/logos/bitcoin-btc-logo.svg?v=034',
-        },
-        {
-            token: "rUSDC",
-            amount: "9.9691",
-            exchangeRate: "1.003",
-            supplyAPR: "0.85%",
-            effectiveAPR: "1.03%",
-            status: {
-                staked: "9.9691",
-                locked: "0.0000",
-                unlocked: "0.0000",
-            },
-            icons: { S: true, U: true, L: true },
-            imageUrl: 'https://cryptologos.cc/logos/usd-coin-usdc-logo.svg?v=034',
-        },
-        {
-            token: "rDAI",
+            token: "rETH",
             amount: "21.981",
             exchangeRate: "1.001",
             supplyAPR: "0.50%",
@@ -82,7 +40,7 @@ const YourSupply: React.FC = () => {
                 unlocked: "0.0000",
             },
             icons: { S: true, U: true, L: true },
-            imageUrl: 'https://cryptologos.cc/logos/multi-collateral-dai-dai-logo.svg?v=034',
+            imageUrl: 'https://cryptologos.cc/logos/ethereum-eth-logo.svg?v=034',
         },
     ];
 

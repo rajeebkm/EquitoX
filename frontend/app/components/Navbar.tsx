@@ -22,15 +22,15 @@ const Navbar = () => {
                             Markets
                         </a>
                     </Link>
-                    <Link href="/spend-borrow" legacyBehavior>
+                    <Link href="/your-borrow" legacyBehavior>
                         <a
-                            onClick={() => setSelectedLink('/spend-borrow')}
-                            className={`text-lg transition-colors duration-200 ease-in-out ${selectedLink === '/spend-borrow'
+                            onClick={() => setSelectedLink('/your-borrow')}
+                            className={`text-lg transition-colors duration-200 ease-in-out ${selectedLink === '/your-borrow'
                                 ? 'text-white font-semibold border-b-2 border-white'
                                 : 'text-gray-300 hover:text-white'
                                 }`}
                         >
-                            Spend Borrow
+                            Your Borrow
                         </a>
                     </Link>
                     <Link href="/your-supply" legacyBehavior>
@@ -44,20 +44,9 @@ const Navbar = () => {
                             Your Supply
                         </a>
                     </Link>
-                    <Link href="/your-borrow" legacyBehavior>
-                        <a
-                            onClick={() => setSelectedLink('/your-borrow')}
-                            className={`text-lg transition-colors duration-200 ease-in-out ${selectedLink === '/your-borrow'
-                                ? 'text-white font-semibold border-b-2 border-white'
-                                : 'text-gray-300 hover:text-white'
-                                }`}
-                        >
-                            Your Borrow
-                        </a>
-                    </Link>
+                    
                 </div>
             </div>
-
 
             <div className="container px-6 flex justify-end">
                 <div className="flex items-end space-x-6 z-0">
