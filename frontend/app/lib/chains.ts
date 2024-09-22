@@ -19,20 +19,20 @@ import {
   // avalancheFuji,
 } from "wagmi/chains";
 import { Address, type Chain as Definition } from "viem";
-const seiEvmAtlantic: Definition = {
-  id: 1328,
-  name: "Sei Atlantic",
-  nativeCurrency: {
-    decimals: 18,
-    name: "SEI",
-    symbol: "SEI",
-  },
-  rpcUrls: {
-    default: {
-      http: ["https://evm-rpc-testnet.sei-apis.com"],
-    },
-  },
-};
+// const seiEvmAtlantic: Definition = {
+//   id: 1328,
+//   name: "Sei Atlantic",
+//   nativeCurrency: {
+//     decimals: 18,
+//     name: "SEI",
+//     symbol: "SEI",
+//   },
+//   rpcUrls: {
+//     default: {
+//       http: ["https://evm-rpc-testnet.sei-apis.com"],
+//     },
+//   },
+// };
 // const merlinTestnet: Definition = {
 //   id: 686868,
 //   name: "Merlin Testnet",
@@ -104,23 +104,23 @@ export const chains: Chain[] = [
   },
 
 
-  {
-    chainSelector: 1017,
-    name: "Sei EVM Atlantic",
-    img: 23149,
-    definition: seiEvmAtlantic,
-    EquitoXCore: "0xB18DB8cabC97546e4eB5B26AeDB4a56231fF10CC",
-    RouterContract: "0x29FeBDd370c8bc815455d518AE38a79D1e200f52",
-  },
+  // {
+  //   chainSelector: 1017,
+  //   name: "Sei EVM Atlantic",
+  //   img: 23149,
+  //   definition: seiEvmAtlantic,
+  //   EquitoXCore: "0xB18DB8cabC97546e4eB5B26AeDB4a56231fF10CC",
+  //   RouterContract: "0x29FeBDd370c8bc815455d518AE38a79D1e200f52",
+  // },
 
-  {
-    chainSelector: 1003,
-    name: "Polygon Amoy",
-    img: 3890,
-    definition: polygonAmoy,
-    EquitoXCore: "0xcd96D36cd8aEe0bd76ed1c0054c1289739d2AD3D",
-    RouterContract: "0xa5e465Be96341b4f1233eF334A4bac2e9Fd10981",
-  },
+  // {
+  //   chainSelector: 1003,
+  //   name: "Polygon Amoy",
+  //   img: 3890,
+  //   definition: polygonAmoy,
+  //   EquitoXCore: "0xcd96D36cd8aEe0bd76ed1c0054c1289739d2AD3D",
+  //   RouterContract: "0xa5e465Be96341b4f1233eF334A4bac2e9Fd10981",
+  // },
 
 
   // {
